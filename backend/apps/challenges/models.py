@@ -1,0 +1,11 @@
+from django.db import models
+
+
+class Challenge(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)
+    summary = models.TextField()
+    difficulty = models.CharField(max_length=32)
+    points = models.PositiveIntegerField(default=50)
+    is_featured = models.BooleanField(default=False)
+
